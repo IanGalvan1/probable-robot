@@ -1,4 +1,7 @@
-import { Application, Assets, Container, Point, Sprite } from 'pixi.js'
+import { Application, Assets, } from 'pixi.js'
+import { manifest } from './assets';
+//import { yoconpelucaCont } from './yoconpelucaCont';
+import { Scene } from './Scene';
 
 const app = new Application({
 	view: document.getElementById("pixi-canvas") as HTMLCanvasElement,
@@ -34,58 +37,36 @@ window.addEventListener("resize", ()=>{
 window.dispatchEvent(new Event ("resolucion"));
 
 
-Assets.add ("ianpj", "./IanPj.png"); 
-Assets.add ("clampy", "./clampy.png");
-Assets.add ("gorro", "./gorro.png");
+Assets.init({ manifest: manifest }).then(()=>{
 
-Assets.load(["clampy", "ianpj", "gorro"]).then(()=>{
+	// Obtenemos todos los nombres de los bundles que tengamos en nuestro manifest
+	const bundleIds =  manifest.bundles.map(bundle => bundle.name);
 
-	const ian: Sprite = Sprite.from("ianpj");
-
+	// descargamos todos los bundles
+	Assets.loadBundle(bundleIds).then(()=>{
+		// recien aca tenemos todos los assets listos. Podemos abrir nuestra escena
 	
-	console.log ("Hola mundo!", ian.width, ian.height); 
+			console.log ("Hola mundo!"); 
+
+			const myScene: Scene = new Scene;
+
+			app.stage.addChild(myScene);
+
+			const myWin: Scene = new Scene;
+
+			app.stage.addChild(myWin);
+	})
+})
+
+// Assets.addBundle("myAssets", assets); 
+
+// Assets.loadBundle(["myAssets"]).then(() => {
+// // Assets.load(["clampy", "ianpj", "gorro"]).then(()=>{
 	
-	// ian.anchor.set(0.5);
+// 	console.log ("Hola mundo!"); 
 
-	//  posicion
-	// ian.x = 500;
-	// ian.y = 300;
+// 	const myScene: Scene = new Scene;
 
-	//escala
-	// ian.scale.x = 0.5;
-	// ian.scale.y = 0.5;
+// 	app.stage.addChild(myScene);
 
-	const gorro: Sprite = Sprite.from("gorro");
-
-	gorro.scale.set(1,0.7) // pimero X, despues Y
-	gorro.position.set(-80,-15) //primero va X, despues Y
-
-	const yoconpeluca: Container = new Container;
-
-	
-	yoconpeluca.addChild(ian);
-	yoconpeluca.addChild(gorro);
-
-	//modificar el padre
-	// yoconpeluca.scale.set(0.3);
-	// yoconpeluca.position.set(450,250);
-
-
-	yoconpeluca.scale.set(0.3);
-	yoconpeluca.position.set(640,360);
-	yoconpeluca.angle = (60);
-	yoconpeluca.rotation = (180);
-
-	//el rotation es mas importante, y si esta rotate+anlge queda en la misma posicion que si solo estuviera el rotate
-
-	console.log (gorro.toGlobal(new Point ()))
-
-	//pa pone el gorro en el medio
-
-	// const aux = gorro.parent.toLocal(new Point(640,360));
-	// gorro.position.x = aux.x;
-	// gorro.position.x = aux.y;
-
-	app.stage.addChild(yoconpeluca);
-});
-
+// });
