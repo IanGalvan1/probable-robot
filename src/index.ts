@@ -1,7 +1,10 @@
 import { Application, Assets, } from 'pixi.js'
 import { manifest } from './assets';
 //import { yoconpelucaCont } from './yoconpelucaCont';
-import { Scene } from './Scene';
+import { Scene } from './Escenas/Scene';
+import { Win} from './Escenas/win';
+import { briga} from './personaje/brigadier';
+import { Keyboard } from './interactr/Keyboard';
 
 const app = new Application({
 	view: document.getElementById("pixi-canvas") as HTMLCanvasElement,
@@ -11,6 +14,8 @@ const app = new Application({
 	width: 1280,
 	height: 720,
 });
+
+Keyboard.initialize();
 
 window.addEventListener("resize", ()=>{
 	console.log("resolucion")
@@ -52,9 +57,13 @@ Assets.init({ manifest: manifest }).then(()=>{
 
 			app.stage.addChild(myScene);
 
-			// const myWin: Scene = new Scene;
+			const myWin: Win = new Win;
 
-			// app.stage.addChild(myWin);
+			app.stage.addChild(myWin);
+
+			const brigadier: briga = new briga;
+
+			app.stage.addChild(brigadier);
 	})
 })
 

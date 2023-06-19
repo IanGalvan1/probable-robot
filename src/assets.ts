@@ -27,6 +27,8 @@ export const manifest:ResolverManifest = {
             assets:
             {
                 check: "./winwin/green_boxCheckmark.png",
+                checkyellow: "./winwin/yellow_boxCheckmark.png",
+                checkblue: "./winwin/blue_boxCheckmark.png",
                 rectanguloverde1: "./winwin/green_button00.png",
                 rectanguloverde2: "./winwin/green_button13.png",
                 panelgris: "./winwin/grey_panel.png",
@@ -34,7 +36,8 @@ export const manifest:ResolverManifest = {
                 estrella: "./winwin/Estrella.png",
                 estrellavacia: "./winwin/EstrellaVacia.png",
                 diamante: "./winwin/Diamante.png",
-                yen: "./winwin/Yen.png"
+                yen: "./winwin/Yen.png",
+                back: "./winwin/back.png"
             }
         },
         {
