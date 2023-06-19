@@ -52,9 +52,9 @@ Assets.init({ manifest: manifest }).then(()=>{
 
 			app.stage.addChild(myScene);
 
-			const myWin: Scene = new Scene;
+			// const myWin: Scene = new Scene;
 
-			app.stage.addChild(myWin);
+			// app.stage.addChild(myWin);
 	})
 })
 

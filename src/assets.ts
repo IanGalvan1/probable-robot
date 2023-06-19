@@ -31,6 +31,21 @@ export const manifest:ResolverManifest = {
                 rectanguloverde2: "./winwin/green_button13.png",
                 panelgris: "./winwin/grey_panel.png",
                 equis: "./winwin/red_boxCross.png",
+                estrella: "./winwin/Estrella.png",
+                estrellavacia: "./winwin/EstrellaVacia.png",
+                diamante: "./winwin/Diamante.png",
+                yen: "./winwin/Yen.png"
+            }
+        },
+        {
+            name : "dance",
+            assets:
+            {
+                dance1: "./danceweed/1.png",
+                dance2: "./danceweed/2.png",
+                dance3: "./danceweed/3.png",
+                dance4: "./danceweed/4.png",
+                dance5: "./danceweed/5.png",
             }
         },
         
