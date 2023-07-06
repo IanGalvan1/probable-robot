@@ -1,18 +1,20 @@
-import { Application, Assets, } from 'pixi.js'
+import { Application, Assets, Ticker, } from 'pixi.js'
 import { manifest } from './assets';
-//import { yoconpelucaCont } from './yoconpelucaCont';
-import { Scene } from './Escenas/Scene';
-import { Win} from './Escenas/win';
-import { briga} from './personaje/brigadier';
-import { Keyboard } from './interactr/Keyboard';
+
+import { Keyboard } from './aplicaciones/Keyboard';
+import { Estrella } from './personaje/yoconpelucaCont';
+// import { briga } from './personaje/brigadier';
+
+export const WIDTH = 1280;
+export const HEIGHT = 720;
 
 const app = new Application({
 	view: document.getElementById("pixi-canvas") as HTMLCanvasElement,
 	resolution: window.devicePixelRatio || 1,
 	autoDensity: true,
 	backgroundColor: 0x6495ed,
-	width: 1280,
-	height: 720,
+	width: WIDTH,
+	height: HEIGHT,
 });
 
 Keyboard.initialize();
@@ -51,19 +53,21 @@ Assets.init({ manifest: manifest }).then(()=>{
 	Assets.loadBundle(bundleIds).then(()=>{
 		// recien aca tenemos todos los assets listos. Podemos abrir nuestra escena
 	
-			console.log ("Hola mundo!"); 
-
-			const myScene: Scene = new Scene;
+			const myScene: Estrella = new Estrella;
 
 			app.stage.addChild(myScene);
 
-			const myWin: Win = new Win;
+			Ticker.shared.add(function (deltaFrame){
+				myScene.update(Ticker.shared.deltaMS, deltaFrame)
+			
+			})
+			// const myWin: Win = new Win;
 
-			app.stage.addChild(myWin);
+			// app.stage.addChild(myWin);
 
-			const brigadier: briga = new briga;
+			// const brigadier: briga = new briga;
 
-			app.stage.addChild(brigadier);
+			// app.stage.addChild(brigadier);
 	})
 })
 

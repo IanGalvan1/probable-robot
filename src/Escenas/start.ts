@@ -1,8 +1,9 @@
 import { AnimatedSprite, Container, NineSlicePlane, Texture, Text, /*Sprite */} from "pixi.js";
-import { button } from "../interactr/button";
-import { Keyboard } from "../interactr/Keyboard";
+import { button } from "../aplicaciones/button";
+import { Keyboard } from "../aplicaciones/Keyboard";
 
-export class Win extends Container {
+
+export class start extends Container {
 
     private check:button;
 
@@ -164,8 +165,8 @@ export class Win extends Container {
         this.myText.position.x=931;
         this.myText.position.y=195;
 
-            Keyboard.down.on("KeyB", this.onKeyB, this);
-            Keyboard.up.on("KeyB", this.onKeyBup, this);
+            // Keyboard.down.on("KeyB", this.onKeyB, this);
+            // Keyboard.up.on("KeyB", this.onKeyBup, this);
 
         this.addChild(star);
 
@@ -217,13 +218,15 @@ export class Win extends Container {
 
     }
 
-    private onKeyB():void{
-        console.log("aprete la B", this);
-    }
+    // private onKeyB():void{
+    //     console.log("aprete la B", this);
+        
+    // }
 
-    private onKeyBup():void{
-        console.log("solte la B", this);
-    }
+    // private onKeyBup():void{
+    //     console.log("solte la B", this);
+
+    // }
 
     private onButtonClick():void{
         console.log("", Keyboard.state.get("KeyA"), this);

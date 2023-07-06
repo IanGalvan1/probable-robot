@@ -16,28 +16,43 @@ export const manifest:ResolverManifest = {
             name : "BrigadorCorre",
             assets:
             {
-                brigadiercamina1: "./Brigadier/BrigadierCaminando1.png",
-                brigadiercamina2: "./Brigadier/BrigadierCaminando2.png",
-                brigadiercamina3: "./Brigadier/BrigadierCaminando3.png",
-                brigadiercamina4: "./Brigadier/BrigadierCaminando4.png",
+                brigadiercaminaA1: "./Brigadier/BrigadierCaminando1.png",
+                brigadiercaminaA2: "./Brigadier/BrigadierCaminando2.png",
+                brigadiercaminaA3: "./Brigadier/BrigadierCaminando3.png",
+                brigadiercaminaA4: "./Brigadier/BrigadierCaminando4.png",
+
+                brigadiercaminaB1: "./Brigadier/BrigadierCaminaLado1.png",
+                brigadiercaminaB2: "./Brigadier/BrigadierCaminaLado2.png",
+                brigadiercaminaB3: "./Brigadier/BrigadierCaminaLado3.png",
+                brigadiercaminaB4: "./Brigadier/BrigadierCaminaLado4.png",
+                brigadiercaminaB5: "./Brigadier/BrigadierCaminaLado5.png",
+                brigadiercaminaB6: "./Brigadier/BrigadierCaminaLado6.png",
+
+                brigadiercaminaC1: "./Brigadier/BrigadierLopez atras 1.png",
+                brigadiercaminaC2: "./Brigadier/BrigadierLopez atras 2.png",
+                brigadiercaminaC3: "./Brigadier/BrigadierLopez atras 3.png",
+                brigadiercaminaC4: "./Brigadier/BrigadierLopez atras 4.png",
             }
         },
         {
-            name : "cartelito",
+            name : "estrella",
             assets:
             {
-                check: "./winwin/green_boxCheckmark.png",
-                checkyellow: "./winwin/yellow_boxCheckmark.png",
-                checkblue: "./winwin/blue_boxCheckmark.png",
-                rectanguloverde1: "./winwin/green_button00.png",
-                rectanguloverde2: "./winwin/green_button13.png",
-                panelgris: "./winwin/grey_panel.png",
-                equis: "./winwin/red_boxCross.png",
-                estrella: "./winwin/Estrella.png",
-                estrellavacia: "./winwin/EstrellaVacia.png",
-                diamante: "./winwin/Diamante.png",
-                yen: "./winwin/Yen.png",
-                back: "./winwin/back.png"
+                estrella1: "./winwin/estrella 1.png",
+                estrella2: "./winwin/estrella 2.png",
+                estrella3: "./winwin/estrella medio.png",
+                estrella4: "./winwin/estrella prefull.png",
+                estrella5: "./winwin/estrellafull.png"
+                
+            }
+        },
+
+        {
+            name : "estrella",
+            assets:
+            {
+                DVD: "./winwin/DVD.png"
+                
             }
         },
         {

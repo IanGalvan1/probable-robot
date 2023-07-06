@@ -21,6 +21,7 @@ export class Keyboard {
     private static onKeyDown(e: KeyboardEvent) {
         if (Keyboard.state.get(e.code) != true) {
             Keyboard.down.emit(e.code);
+                        
         }
         Keyboard.state.set(e.code, true);
     }
