@@ -2,11 +2,11 @@ import { Application, Assets, Ticker, } from 'pixi.js'
 import { manifest } from './assets';
 
 import { Keyboard } from './aplicaciones/Keyboard';
-import { Estrella } from './personaje/yoconpelucaCont';
+import { Estrella } from './personaje/Estrella';
 // import { briga } from './personaje/brigadier';
 
-export const WIDTH = 1280;
-export const HEIGHT = 720;
+export const WIDTH = 1920;
+export const HEIGHT = 1080;
 
 const app = new Application({
 	view: document.getElementById("pixi-canvas") as HTMLCanvasElement,

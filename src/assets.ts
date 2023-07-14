@@ -12,6 +12,7 @@ export const manifest:ResolverManifest = {
                 baldosa: "./baldosa.png",
             }
         },
+
         {
             name : "BrigadorCorre",
             assets:
@@ -27,7 +28,7 @@ export const manifest:ResolverManifest = {
                 brigadiercaminaB4: "./Brigadier/BrigadierCaminaLado4.png",
                 brigadiercaminaB5: "./Brigadier/BrigadierCaminaLado5.png",
                 brigadiercaminaB6: "./Brigadier/BrigadierCaminaLado6.png",
-
+                
                 brigadiercaminaC1: "./Brigadier/BrigadierLopez atras 1.png",
                 brigadiercaminaC2: "./Brigadier/BrigadierLopez atras 2.png",
                 brigadiercaminaC3: "./Brigadier/BrigadierLopez atras 3.png",
@@ -42,30 +43,21 @@ export const manifest:ResolverManifest = {
                 estrella2: "./winwin/estrella 2.png",
                 estrella3: "./winwin/estrella medio.png",
                 estrella4: "./winwin/estrella prefull.png",
-                estrella5: "./winwin/estrellafull.png"
+                estrella5: "./winwin/estrellafull.png",
                 
             }
         },
 
         {
-            name : "estrella",
+            name : "mundoA",
             assets:
             {
-                DVD: "./winwin/DVD.png"
-                
+                bg: "./fondos/word 1-1.png",
+                special: "./fondos/EspecialBlock.png",
             }
         },
-        {
-            name : "dance",
-            assets:
-            {
-                dance1: "./danceweed/1.png",
-                dance2: "./danceweed/2.png",
-                dance3: "./danceweed/3.png",
-                dance4: "./danceweed/4.png",
-                dance5: "./danceweed/5.png",
-            }
-        },
+
+
         
     ]
 }
