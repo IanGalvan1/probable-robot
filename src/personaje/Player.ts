@@ -7,8 +7,9 @@ export class Player extends PhysicsContainer implements IHitbox
 {
     
 
-    private static readonly GRAVITY =  510;
-    private static readonly MOVE_SPEED =  350;
+    private static readonly GRAVITY =  350;
+    private static readonly MOVE_SPEED =  0;
+    private static readonly JUMP_SPEED =  600;
 
     public canJump = true;
 
@@ -35,17 +36,17 @@ export class Player extends PhysicsContainer implements IHitbox
         this.star.animationSpeed = 0.08;
 
         
-        this.star.position.set(0, 0);
+        this.star.position.set(200, 900);
         this.star.scale.set(5, 5);
 
         this.hitbox =new Graphics();
         this.hitbox.beginFill(0xFF00FF, 0.3);
-        this.hitbox.drawRect(0,0,90,90);
+        this.hitbox.drawRect(0,0,16,16);
         this.hitbox.endFill();
-        this.hitbox.x= -45;
-        this.hitbox.y= -45;
+        this.hitbox.x = -8;
+        this.hitbox.y= -8;
 
-        this.addChild(this.hitbox);
+        this.star.addChild(this.hitbox);
 
         this.addChild(this.star);
 
@@ -81,13 +82,20 @@ export class Player extends PhysicsContainer implements IHitbox
         //     this.jump();
 
         // }
+
+        if (Keyboard.state.get("ArrowDown")){
+            this.acceleration.y = Player.GRAVITY*5;
+        } else {
+            this.acceleration.y = Player.GRAVITY;
+
+        }
     }
 
     private jump()
     {
         if (this.canJump){
         this.canJump = false;
-        this.speed.y = -500;
+        this.speed.y = -Player.JUMP_SPEED;
         }
     }
 
@@ -113,16 +121,48 @@ export class Player extends PhysicsContainer implements IHitbox
                     if (this.y > platform.y)
                     {
                         this.y += overlap.height;
-                        this.speed.y = 0;
-                        this.canJump = true;
 
+                        this.speed.y = 0;
+                        this.canJump = false;
 
                     } else if (this.y < platform.y){
 
                         this.y -= overlap.height;
+                        this.speed.y = 0;
+                        this.canJump = true;
                     }
 
                 }
+    }
+
+    public separatefloor(overlapfloor: Rectangle, floor: ObservablePoint<any>) {
+        if (overlapfloor.width < overlapfloor.height)
+        {
+            if (this.x > floor.x)
+            {
+                this.x += overlapfloor.width;
+
+            } else if (this.x < floor.x){
+
+                this.x -= overlapfloor.width;
+            }
+
+        } else{
+
+            if (this.y > floor.y)
+            {
+                this.y -= overlapfloor.height;
+                this.speed.y = 0;
+                this.canJump = true;
+
+            } else if (this.y < floor.y){
+
+                this.y += overlapfloor.height;
+                this.speed.y = 0;
+                this.canJump = false;
+            }
+
+        }
     }
 
 }
