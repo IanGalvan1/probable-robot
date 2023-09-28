@@ -1,7 +1,7 @@
 import { Container, Text} from "pixi.js";
 
-import { Keyboard } from "../aplicaciones/Keyboard";
-import { briga } from "../personaje/brigadier";
+import { Keyboard } from "../../aplicaciones/Keyboard";
+import { briga } from "../../personaje/brigadier";
 
 
 export class Scene extends Container {

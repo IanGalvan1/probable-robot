@@ -2,37 +2,17 @@ import type { ResolverManifest } from "pixi.js";
 
 export const manifest:ResolverManifest = {
     bundles: [
-        {
-            name : "primeros",
-            assets:
-            {
-                ianpj: "./IanPj.png",
-                Clampy: "./clampy.png",
-                gorro: "./gorro.png",
-                baldosa: "./baldosa.png",
-            }
-        },
 
         {
-            name : "BrigadorCorre",
+            name : "personajes",
             assets:
             {
-                brigadiercaminaA1: "./Brigadier/BrigadierCaminando1.png",
-                brigadiercaminaA2: "./Brigadier/BrigadierCaminando2.png",
-                brigadiercaminaA3: "./Brigadier/BrigadierCaminando3.png",
-                brigadiercaminaA4: "./Brigadier/BrigadierCaminando4.png",
-
-                brigadiercaminaB1: "./Brigadier/BrigadierCaminaLado1.png",
-                brigadiercaminaB2: "./Brigadier/BrigadierCaminaLado2.png",
-                brigadiercaminaB3: "./Brigadier/BrigadierCaminaLado3.png",
-                brigadiercaminaB4: "./Brigadier/BrigadierCaminaLado4.png",
-                brigadiercaminaB5: "./Brigadier/BrigadierCaminaLado5.png",
-                brigadiercaminaB6: "./Brigadier/BrigadierCaminaLado6.png",
-                
-                brigadiercaminaC1: "./Brigadier/BrigadierLopez atras 1.png",
-                brigadiercaminaC2: "./Brigadier/BrigadierLopez atras 2.png",
-                brigadiercaminaC3: "./Brigadier/BrigadierLopez atras 3.png",
-                brigadiercaminaC4: "./Brigadier/BrigadierLopez atras 4.png",
+                abuela: "./personajes/abuela.png",
+                abuela2: "./personajes/abuela2.png",
+                abuela3: "./personajes/abuela3.png",
+                pelao: "./personajes/pelao.png",
+                pelao2: "./personajes/pelao2.png",
+                pelao3: "./personajes/pelao3.png",
             }
         },
         {
@@ -49,14 +29,51 @@ export const manifest:ResolverManifest = {
         },
 
         {
-            name : "mundoA",
+            name : "Spritesheet",
             assets:
             {
-                bg: "./fondos/word 1-1.png",
-                special: "./fondos/EspecialBlock.png",
+                spritesheet: "./spritesheet/texture-0.json",
+                spritesheet1: "./spritesheet/texture-1.json",
+                spritesheetbotons: "./spritesheet/objetos.json",
             }
         },
 
+        {
+            name : "fondos",
+            assets:
+            {
+                puente: "./fondos/elpuente.png",
+                peatonal: "./fondos/lapeatonal.png",
+                brigadeirou: "./fondos/brigadeirou.png",
+                laventi: "./fondos/laventi.png",
+                mapa: "./fondos/mapa.PNG",
+            }
+        },
+
+        {
+            name : "objetos",
+            assets:
+            {
+                galleta: "./objetos/galletas-danesas.png",
+                galleta2: "./objetos/galletas-danesas2.png",
+                galleta3: "./objetos/galletas-danesas3.png",
+                termo: "./objetos/estanli.png",
+                termo2: "./objetos/estanli2.png",
+                termo3: "./objetos/estanli3.png",
+
+                mapita: "./objetos/mapita.png",
+
+                equis: "./objetos/CERRAR.png"
+            }
+        },
+
+        {
+            name: "sonidos",
+            assets:
+            {
+                talk: "./Sonidos/talking.mp3"
+            }
+        }
 
         
     ]

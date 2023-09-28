@@ -1,6 +1,6 @@
 import { AnimatedSprite, Container, NineSlicePlane, Texture, Text, /*Sprite */} from "pixi.js";
-import { button } from "../aplicaciones/button";
-import { Keyboard } from "../aplicaciones/Keyboard";
+import { button } from "../../aplicaciones/button";
+import { Keyboard } from "../../aplicaciones/Keyboard";
 
 
 export class start extends Container {
