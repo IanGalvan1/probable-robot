@@ -240,10 +240,34 @@
         "y": 0.5
       }
     },
-    "grey_panel.png": {
+    "grey_boxTick.png": {
       "frame": {
         "x": 106,
-        "y": 155,
+        "y": 144,
+        "w": 36,
+        "h": 36
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 36,
+        "h": 36
+      },
+      "sourceSize": {
+        "w": 36,
+        "h": 36
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "grey_panel.png": {
+      "frame": {
+        "x": 2,
+        "y": 159,
         "w": 100,
         "h": 100
       },
@@ -266,8 +290,8 @@
     },
     "mapita.png": {
       "frame": {
-        "x": 2,
-        "y": 159,
+        "x": 146,
+        "y": 155,
         "w": 100,
         "h": 100
       },

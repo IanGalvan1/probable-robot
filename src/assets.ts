@@ -71,7 +71,8 @@ export const manifest:ResolverManifest = {
             name: "sonidos",
             assets:
             {
-                talk: "./Sonidos/talking.mp3"
+                talk: "./Sonidos/talking.mp3",
+                goku: "./Sonidos/goku brigadier.mp3"
             }
         }
 

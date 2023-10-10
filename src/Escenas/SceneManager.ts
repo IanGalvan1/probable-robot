@@ -54,7 +54,7 @@ export namespace SceneManager
                     (app.view.style as any).marginBottom = marginVertical + "px";
                 });
 
-                window.dispatchEvent(new Event ("resolucion"));
+                window.dispatchEvent(new Event ("resize"));
 
                 Ticker.shared.add(update);
         }

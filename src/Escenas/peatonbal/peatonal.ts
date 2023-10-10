@@ -100,7 +100,7 @@ export class peatonal extends SceneBase implements Iupdateable {
         this.pela.position.set(1200, 650);
         this.pela.scale.set(2, 2);
 
-        this.text = new Text("Señor calvo (si, es su apellido)", {fontSize:65, fill: 0x000000, fontFamily:"Bauhaus 93",});
+        this.text = new Text("Señor calvo (si, es su apellido)", {fontSize:65, fill: 0x000000, fontFamily:"Comic Sans MS",});
 
         this.text.position.x= 200;
         this.text.position.y= 800;
@@ -121,7 +121,7 @@ export class peatonal extends SceneBase implements Iupdateable {
         "Che pibe, querio mates pero no tengo mi termo. \n ¿Me lo traes? lo perdo por ahi, gracias viejo",
         {fontSize:65,
         fill: 0x000000,
-        fontFamily:"Bauhaus 93",
+        fontFamily:"Comic Sans MS",
     });
     this.anunciado.width= 1200;
     this.anunciado.position.x= 50;
@@ -141,8 +141,12 @@ export class peatonal extends SceneBase implements Iupdateable {
 
         this.a = new Tween (this.PlayerA);
         this.a.to({x:750, y:-100}, 2000).onComplete(()=>{
-            VariablesCompartidas.tweennpc = 1;
-            console.log("bbbbbb")
+
+
+            // VariablesCompartidas.tweennpc = 1;
+            // console.log("bbbbbb")
+
+            this.cuandotermine();
         });
 
         this.b = new Tween (this.PlayerA);
@@ -216,6 +220,13 @@ export class peatonal extends SceneBase implements Iupdateable {
         this.masitas.position.set(378, 800);
         this.masitas.scale.set(0.2, 0.2);
 
+                
+        this.b = new Tween (this.PlayerA);
+        this.b.to({x:358, y:0}, 2000).onComplete(()=>{
+            this.cuandotermineobjeto();
+        });
+        
+
         this.masitas.buttonEvents.on("buttonClicked", this.onButtonClickMasitas,this)
 
         if(VariablesCompartidas.vieja == 1 && VariablesCompartidas.masita ==0){
@@ -236,10 +247,7 @@ export class peatonal extends SceneBase implements Iupdateable {
 
     // }
     
-
-    private onButtonClickMasitas():void{
-        console.log ("funciona el while")
-        
+    private cuandotermineobjeto ():void{
         if (VariablesCompartidas.vieja == 1){
             this.removeChild(this.masitas);
             VariablesCompartidas.masita = 1;
@@ -247,76 +255,85 @@ export class peatonal extends SceneBase implements Iupdateable {
         }
     }
 
+    private cuandotermine ():void{
+        
+        if (VariablesCompartidas.peladoCharla <= 0){
+            sound.play("talk", {volume:0.5, singleInstance:true} );
+            this.addChild(this.texto);
+            VariablesCompartidas.peladoCharla = 1;
+            console.log("pelado charla =",VariablesCompartidas.peladoCharla )
+            console.log("termo =",VariablesCompartidas.termo);
+            this.addChild(this.anunciado);
+        } else {
+
+            if (VariablesCompartidas.peladoCharla == 1 && VariablesCompartidas.termo == 0){
+
+                this.addChild(this.texto);
+
+                sound.play("talk", {volume:0.5, singleInstance:true} );
+
+                this.anunciado = new Text(
+                    "Me trajiste mi Estanli? \n dale que no tengo todo el dia",
+                    {fontSize:65,
+                    fill: 0x000000,
+                    fontFamily:"Comic Sans MS",
+                });
+                this.anunciado.width= 1200;
+                this.anunciado.position.x= 50;
+                this.anunciado.position.y= 900;
+                this.addChild(this.anunciado)
+
+            } else if (VariablesCompartidas.peladoCharla == 1 && VariablesCompartidas.termo == 1){
+            
+                sound.play("talk", {volume:0.5, singleInstance:true} );
+
+                this.addChild(this.texto);
+
+                this.anunciado = new Text(
+                    "Gracias papa \n ahora si que se rompen esos materiales",
+                    {fontSize:65,
+                    fill: 0x000000,
+                    fontFamily:"Comic Sans MS",
+                });
+                this.anunciado.width= 1200;
+                this.anunciado.position.x= 50;
+                this.anunciado.position.y= 900;
+                VariablesCompartidas.textopluspela = 1;
+                // VariablesCompartidas.peladoCharla = 0;
+                // VariablesCompartidas.termo = 0;
+                
+                this.addChild(this.anunciado)
+
+            }// else if (VariablesCompartidas.textopluspela == 1 && VariablesCompartidas.peladoCharla == 0 && VariablesCompartidas.termo == 0){
+
+            //     sound.play("talk", {volume:0.5, singleInstance:true} );
+
+            //     this.addChild(this.texto);
+
+            //     this.anunciado = new Text(
+            //         "Sabias que apretando en la \n plaza del soldado veras algo secreto?",
+            //         {fontSize:65,
+            //         fill: 0x000000,
+            //         fontFamily:"Bauhaus 93",
+            //     });
+            //     this.anunciado.width= 1200;
+            //     this.anunciado.position.x= 50;
+            //     this.anunciado.position.y= 900;
+
+            //     this.addChild(this.anunciado)
+            // }
+        }
+        // VariablesCompartidas.peladoCharla == 0;
+
+    }
+    private onButtonClickMasitas():void{
+        this.b.start();
+
+    }
+
     private onButtonClickTexto():void{
 
         this.a.start();
-            if (VariablesCompartidas.peladoCharla <= 0){
-                sound.play("talk", {volume:0.5, singleInstance:true} );
-                this.addChild(this.texto);
-                VariablesCompartidas.peladoCharla = 1;
-                console.log("pelado charla =",VariablesCompartidas.peladoCharla )
-                console.log("termo =",VariablesCompartidas.termo);
-                this.addChild(this.anunciado);
-            } else {
-
-                if (VariablesCompartidas.peladoCharla == 1 && VariablesCompartidas.termo == 0){
-
-                    this.addChild(this.texto);
-
-                    sound.play("talk", {volume:0.5, singleInstance:true} );
-
-                    this.anunciado = new Text(
-                        "Me trajiste mi Estanli? \n dale que no tengo todo el dia",
-                        {fontSize:65,
-                        fill: 0x000000,
-                        fontFamily:"Bauhaus 93",
-                    });
-                    this.anunciado.width= 1200;
-                    this.anunciado.position.x= 50;
-                    this.anunciado.position.y= 900;
-                    this.addChild(this.anunciado)
-
-                } else if (VariablesCompartidas.peladoCharla == 1 && VariablesCompartidas.termo == 1){
-                
-                    sound.play("talk", {volume:0.5, singleInstance:true} );
-
-                    this.addChild(this.texto);
-
-                    this.anunciado = new Text(
-                        "Gracias papa \n ahora si que se rompen esos materiales",
-                        {fontSize:65,
-                        fill: 0x000000,
-                        fontFamily:"Bauhaus 93",
-                    });
-                    this.anunciado.width= 1200;
-                    this.anunciado.position.x= 50;
-                    this.anunciado.position.y= 900;
-                    VariablesCompartidas.textopluspela = 1;
-                    VariablesCompartidas.peladoCharla = 0;
-                    VariablesCompartidas.termo = 0;
-
-                    this.addChild(this.anunciado)
-
-                } else if (VariablesCompartidas.textopluspela == 1 && VariablesCompartidas.peladoCharla == 0 && VariablesCompartidas.termo == 0){
-
-                    sound.play("talk", {volume:0.5, singleInstance:true} );
-
-                    this.addChild(this.texto);
-
-                    this.anunciado = new Text(
-                        "Sabias que apretando en la \n plaza del soldado veras algo secreto?",
-                        {fontSize:65,
-                        fill: 0x000000,
-                        fontFamily:"Bauhaus 93",
-                    });
-                    this.anunciado.width= 1200;
-                    this.anunciado.position.x= 50;
-                    this.anunciado.position.y= 900;
-
-                    this.addChild(this.anunciado)
-                }
-            }
-            VariablesCompartidas.peladoCharla == 0;
     }
 
     

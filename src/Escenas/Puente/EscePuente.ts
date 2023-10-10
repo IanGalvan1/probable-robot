@@ -10,6 +10,7 @@ import { Top } from "./top";
 import { SceneManager } from "../SceneManager";
 import { VariablesCompartidas } from "../../aplicaciones/VariablesComparidas";
 import { mapa } from "../Menu/mapa";
+import { Tween } from "tweedle.js";
 
 
 
@@ -44,6 +45,7 @@ export class EscePuente extends Container implements Iupdateable {
     private anunciado: Text;
 
 
+    private a: Tween<briga>;
 
     // private gameSpeed: number = 200;
 
@@ -51,7 +53,7 @@ export class EscePuente extends Container implements Iupdateable {
     {
         super()
 
-
+        this.PlayerA = new briga();
         // --------------------------------------
 
         this.floor = new Floor;
@@ -85,7 +87,7 @@ export class EscePuente extends Container implements Iupdateable {
         this.abu.position.set(1800, 680);
         this.abu.scale.set(-1.5, 1.5);
 
-        this.text = new Text("Abuelita Estela", {fontSize:65, fill: 0x000000, fontFamily:"Bauhaus 93",});
+        this.text = new Text("Abuelita Estela", {fontSize:65, fill: 0x000000, fontFamily:"Comic Sans MS",});
 
         this.text.position.x= 200;
         this.text.position.y= 800;
@@ -98,6 +100,8 @@ export class EscePuente extends Container implements Iupdateable {
         this.texto.addChild(this.abu);
 
         this.texto.addChild(this.text);
+
+
         
 
 // -----------------------------------
@@ -106,7 +110,7 @@ export class EscePuente extends Container implements Iupdateable {
         "Hola nene, ayudame un segundito. \n ¿No me podrias traer mi costurero, porfavor?",
         {fontSize:65,
         fill: 0x000000,
-        fontFamily:"Bauhaus 93",
+        fontFamily:"Comic Sans MS",
     });
     this.anunciado.width= 1200;
     this.anunciado.position.x= 50;
@@ -119,12 +123,21 @@ export class EscePuente extends Container implements Iupdateable {
             Texture.from("/personajes/abuela3.png"),
             Texture.from("/personajes/abuela2.png"),
         );
-        
+
+        this.a = new Tween (this.PlayerA);
+        this.a.to({x:750, y:-100}, 2000).onComplete(()=>{
+
+
+            // VariablesCompartidas.tweennpc = 1;
+            // console.log("bbbbbb")
+
+            this.cuandotermine();
+        });
+
         this.hit = new Platform;
 
         this.world = new Container();
-        
-        this.PlayerA = new briga();
+
 
         this.PlayerA.position.set(0, 0);
         
@@ -172,9 +185,8 @@ export class EscePuente extends Container implements Iupdateable {
 
     }
 
-
-    private onButtonClickTexto():void{
-
+    private cuandotermine ():void{
+        
         if (VariablesCompartidas.vieja <= 0){
             sound.play("talk", {volume:0.5, singleInstance:true} );
 
@@ -195,7 +207,7 @@ export class EscePuente extends Container implements Iupdateable {
                     "Dale pibe, sos re contra joven \n traele el costurero a la nona",
                     {fontSize:65,
                     fill: 0x000000,
-                    fontFamily:"Bauhaus 93",
+                    fontFamily:"Comic Sans MS",
                 });
                 this.anunciado.width= 1200;
                 this.anunciado.position.x= 50;
@@ -212,19 +224,23 @@ export class EscePuente extends Container implements Iupdateable {
                     "Ahi esta! \n Muchas gracias nene, toma un plimplaf",
                     {fontSize:65,
                     fill: 0x000000,
-                    fontFamily:"Bauhaus 93",
+                    fontFamily:"Comic Sans MS",
                 });
                 this.anunciado.width= 1200;
                 this.anunciado.position.x= 50;
                 this.anunciado.position.y= 900;
+                VariablesCompartidas.textoplusvieja=1;
 
                 this.addChild(this.anunciado)
             }
         }
-        VariablesCompartidas.vieja==0;
-}
+        // VariablesCompartidas.vieja==0;
+    }
 
-    
+    private onButtonClickTexto():void{
+        this.a.start();
+    }
+
     private onButtonClickClose():void{
         if (VariablesCompartidas.vieja <= 0 ){
             this.removeChild(this.texto);

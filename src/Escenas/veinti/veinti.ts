@@ -118,6 +118,11 @@ export class veinti extends SceneBase implements Iupdateable {
         this.termo.position.set(378, 800);
         this.termo.scale.set(0.2, 0.2);
 
+        this.b = new Tween (this.PlayerA);
+        this.b.to({x:358, y:0}, 2000).onComplete(()=>{
+            this.cuandotermineobjeto();
+        });
+
         if(VariablesCompartidas.peladoCharla == 1 && VariablesCompartidas.termo ==0){
             this.addChild(this.termo);
         }
@@ -126,16 +131,18 @@ export class veinti extends SceneBase implements Iupdateable {
 
     }
 
-    
-    private onButtonClickTextoEstanli():void{
-        console.log ("funciona el while")
-        
+    private cuandotermineobjeto ():void{
         if (VariablesCompartidas.peladoCharla == 1){
             this.termo.position.x=10000;
             this.removeChild(this.termo);
             VariablesCompartidas.termo = 1;
             console.log("YA TENES EL TERMO", VariablesCompartidas.termo)
         }
+    }
+
+    private onButtonClickTextoEstanli():void{
+
+        this.b.start();
     }
 
 
