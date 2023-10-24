@@ -96,11 +96,11 @@ export class Inicio extends SceneBase{
         this.myText = new Text("Brigadier\nEl juego", {align: "center",fontSize:35, fill: 0x73cd4b, fontFamily:"Comic Sans MS"});
 
 
-        this.comienzo = new Text("Comienzo", {fontSize:28, fill: 0x23cd4b, fontFamily:"Comic Sans MS"});
+        this.comienzo = new Text("Salir", {fontSize:28, fill: 0x23cd4b, fontFamily:"Comic Sans MS"});
 
         this.options = new Text("Opciones", {fontSize:28, fill: 0x23cd4b, fontFamily:"Comic Sans MS"});
 
-        this.salida = new Text("Salir", {fontSize:28, fill: 0x23cd4b, fontFamily:"Comic Sans MS"});
+        this.salida = new Text("Comienzo", {fontSize:28, fill: 0x23cd4b, fontFamily:"Comic Sans MS"});
         
         this.panel.width= 120;
         this.panel.height= 200;

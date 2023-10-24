@@ -8,7 +8,6 @@ import { button } from "../../aplicaciones/button";
 import { Floor } from "./Floor";
 import { Top } from "./top";
 import { Wall } from "./walls";
-import { Tween } from "tweedle.js";
 import { VariablesCompartidas } from "../../aplicaciones/VariablesComparidas";
 import { SceneBase } from "../../aplicaciones/SceneAbstract";
 import { mapa } from "../Menu/mapa";
@@ -47,11 +46,6 @@ export class peatonal extends SceneBase implements Iupdateable {
     private text: Text;
 
     private anunciado: Text;
-
-
-    private a: Tween<briga>;
-
-    private b: Tween<briga>;
 
 
     constructor()
@@ -139,19 +133,6 @@ export class peatonal extends SceneBase implements Iupdateable {
         
         this.PlayerA = new briga();
 
-        this.a = new Tween (this.PlayerA);
-        this.a.to({x:750, y:-100}, 2000).onComplete(()=>{
-
-
-            // VariablesCompartidas.tweennpc = 1;
-            // console.log("bbbbbb")
-
-            this.cuandotermine();
-        });
-
-        this.b = new Tween (this.PlayerA);
-        this.b.to({x:478, y:0}, 2000);
-
         this.PlayerA.position.set(600, 0);
         
         this.background = new TilingSprite(Texture.from("peatonal"), SceneManager.WIDTH, SceneManager.HEIGHT);
@@ -220,13 +201,6 @@ export class peatonal extends SceneBase implements Iupdateable {
         this.masitas.position.set(378, 800);
         this.masitas.scale.set(0.2, 0.2);
 
-                
-        this.b = new Tween (this.PlayerA);
-        this.b.to({x:358, y:0}, 2000).onComplete(()=>{
-            this.cuandotermineobjeto();
-        });
-        
-
         this.masitas.buttonEvents.on("buttonClicked", this.onButtonClickMasitas,this)
 
         if(VariablesCompartidas.vieja == 1 && VariablesCompartidas.masita ==0){
@@ -247,7 +221,7 @@ export class peatonal extends SceneBase implements Iupdateable {
 
     // }
     
-    private cuandotermineobjeto ():void{
+    private onButtonClickMasitas():void{
         if (VariablesCompartidas.vieja == 1){
             this.removeChild(this.masitas);
             VariablesCompartidas.masita = 1;
@@ -255,8 +229,7 @@ export class peatonal extends SceneBase implements Iupdateable {
         }
     }
 
-    private cuandotermine ():void{
-        
+    private onButtonClickTexto():void{
         if (VariablesCompartidas.peladoCharla <= 0){
             sound.play("talk", {volume:0.5, singleInstance:true} );
             this.addChild(this.texto);
@@ -325,15 +298,6 @@ export class peatonal extends SceneBase implements Iupdateable {
         }
         // VariablesCompartidas.peladoCharla == 0;
 
-    }
-    private onButtonClickMasitas():void{
-        this.b.start();
-
-    }
-
-    private onButtonClickTexto():void{
-
-        this.a.start();
     }
 
     

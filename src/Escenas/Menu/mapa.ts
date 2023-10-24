@@ -23,6 +23,12 @@ export class mapa extends SceneBase{
 
     private peatonalpng: Sprite;
 
+
+    private info: Sprite;
+    private informa: Text;
+    private informacion:Container;
+    private equis2: button;
+
     // private monumento:button;
 
     private veintipng: Sprite;
@@ -55,6 +61,35 @@ export class mapa extends SceneBase{
     {
         super() 
 
+        this.info = Sprite.from ("./objetos/grey_panel.png");
+
+        this.info.position.set(90,250);
+        this.info.scale.set(1.5);
+        this.info.width = 450;
+
+        this.informa = new Text("Puedes moverte \npor el mapa usando WASD \n pero esto sigue \nen desarrollo", {fontSize:28, fill: 0x23cd4b, fontFamily:"Comic Sans MS"});
+
+        this.informa.position.set(120,250);
+        this.informa.scale.set(1)
+
+        this.informacion = new Container;
+
+        this.equis2 = new button(
+            Texture.from("./objetos/CERRAR.png"),
+            Texture.from("./objetos/CERRAR.png"),
+            Texture.from("./objetos/CERRAR.png"),
+        );
+
+        this.equis2.position.set(470, 260);
+        this.equis2.scale.set(0.2);
+
+    this.equis2.buttonEvents.on("buttonClicked", this.onButtonClickClose2,this);
+
+        this.informacion.addChild(this.info);
+        this.informacion.addChild(this.informa);
+        this.informacion.addChild(this.equis2);
+
+//  ----------------------------------
         sound.stop ("goku");
 
         this.baldosa = new NineSlicePlane(
@@ -275,6 +310,8 @@ export class mapa extends SceneBase{
         this.Todo.scale.x=1.5;
         this.Todo.scale.y=1.5;
 
+        this.addChild(this.informacion);
+
     }
 
     private onButtonFinal():void{
@@ -355,6 +392,10 @@ export class mapa extends SceneBase{
     private onButtonClickClose():void{
         this.removeChild(this.texto);
         this.removeChild(this.anunciado);
+    }
+
+    private onButtonClickClose2():void{
+        this.removeChild(this.informacion);
     }
 
 }

@@ -10,7 +10,7 @@ import { Top } from "./top";
 import { SceneManager } from "../SceneManager";
 import { VariablesCompartidas } from "../../aplicaciones/VariablesComparidas";
 import { mapa } from "../Menu/mapa";
-import { Tween } from "tweedle.js";
+
 
 
 
@@ -44,8 +44,6 @@ export class EscePuente extends Container implements Iupdateable {
 
     private anunciado: Text;
 
-
-    private a: Tween<briga>;
 
     // private gameSpeed: number = 200;
 
@@ -124,16 +122,6 @@ export class EscePuente extends Container implements Iupdateable {
             Texture.from("/personajes/abuela2.png"),
         );
 
-        this.a = new Tween (this.PlayerA);
-        this.a.to({x:750, y:-100}, 2000).onComplete(()=>{
-
-
-            // VariablesCompartidas.tweennpc = 1;
-            // console.log("bbbbbb")
-
-            this.cuandotermine();
-        });
-
         this.hit = new Platform;
 
         this.world = new Container();
@@ -185,8 +173,7 @@ export class EscePuente extends Container implements Iupdateable {
 
     }
 
-    private cuandotermine ():void{
-        
+    private onButtonClickTexto():void{
         if (VariablesCompartidas.vieja <= 0){
             sound.play("talk", {volume:0.5, singleInstance:true} );
 
@@ -235,10 +222,6 @@ export class EscePuente extends Container implements Iupdateable {
             }
         }
         // VariablesCompartidas.vieja==0;
-    }
-
-    private onButtonClickTexto():void{
-        this.a.start();
     }
 
     private onButtonClickClose():void{

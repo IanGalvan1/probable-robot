@@ -7,7 +7,6 @@ import { button } from "../../aplicaciones/button";
 import { Floor } from "./Floor";
 import { Top } from "./top";
 import { Wall } from "./walls";
-import { Tween } from "tweedle.js";
 import { VariablesCompartidas } from "../../aplicaciones/VariablesComparidas";
 import { SceneBase } from "../../aplicaciones/SceneAbstract";
 import { mapa } from "../Menu/mapa";
@@ -32,10 +31,6 @@ export class veinti extends SceneBase implements Iupdateable {
     private background: TilingSprite;
 
     private termo: button;
-
-    private a: Tween<briga>;
-
-    private b: Tween<briga>;
 
 
     constructor()
@@ -68,15 +63,6 @@ export class veinti extends SceneBase implements Iupdateable {
         this.world = new Container();
         
         this.PlayerA = new briga();
-
-        this.a = new Tween (this.PlayerA);
-        this.a.to({x:750, y:-100}, 2000).onComplete(()=>{
-            VariablesCompartidas.tweennpc = 1;
-            console.log("bbbbbb")
-        });
-
-        this.b = new Tween (this.PlayerA);
-        this.b.to({x:478, y:0}, 2000);
 
         this.PlayerA.position.set(600, 0);
         
@@ -118,11 +104,6 @@ export class veinti extends SceneBase implements Iupdateable {
         this.termo.position.set(378, 800);
         this.termo.scale.set(0.2, 0.2);
 
-        this.b = new Tween (this.PlayerA);
-        this.b.to({x:358, y:0}, 2000).onComplete(()=>{
-            this.cuandotermineobjeto();
-        });
-
         if(VariablesCompartidas.peladoCharla == 1 && VariablesCompartidas.termo ==0){
             this.addChild(this.termo);
         }
@@ -131,18 +112,13 @@ export class veinti extends SceneBase implements Iupdateable {
 
     }
 
-    private cuandotermineobjeto ():void{
+    private onButtonClickTextoEstanli():void{
         if (VariablesCompartidas.peladoCharla == 1){
             this.termo.position.x=10000;
             this.removeChild(this.termo);
             VariablesCompartidas.termo = 1;
             console.log("YA TENES EL TERMO", VariablesCompartidas.termo)
         }
-    }
-
-    private onButtonClickTextoEstanli():void{
-
-        this.b.start();
     }
 
 
