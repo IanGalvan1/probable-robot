@@ -1,0 +1,303 @@
+{
+  "frames": {
+    "BrigadierLopez atras 1.png": {
+      "frame": {
+        "x": 2,
+        "y": 2,
+        "w": 269,
+        "h": 897
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 269,
+        "h": 897
+      },
+      "sourceSize": {
+        "w": 269,
+        "h": 897
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "BrigadierLopez atras 2.png": {
+      "frame": {
+        "x": 2,
+        "y": 903,
+        "w": 251,
+        "h": 896
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 251,
+        "h": 896
+      },
+      "sourceSize": {
+        "w": 251,
+        "h": 896
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "BrigadierLopez atras 4.png": {
+      "frame": {
+        "x": 2,
+        "y": 1803,
+        "w": 237,
+        "h": 895
+      },
+      "rotated": true,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 237,
+        "h": 895
+      },
+      "sourceSize": {
+        "w": 237,
+        "h": 895
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "abuela.png": {
+      "frame": {
+        "x": 257,
+        "y": 903,
+        "w": 492,
+        "h": 767
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 492,
+        "h": 767
+      },
+      "sourceSize": {
+        "w": 492,
+        "h": 767
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "abuela2.png": {
+      "frame": {
+        "x": 753,
+        "y": 903,
+        "w": 492,
+        "h": 767
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 492,
+        "h": 767
+      },
+      "sourceSize": {
+        "w": 492,
+        "h": 767
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "abuela3.png": {
+      "frame": {
+        "x": 1249,
+        "y": 903,
+        "w": 492,
+        "h": 767
+      },
+      "rotated": true,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 492,
+        "h": 767
+      },
+      "sourceSize": {
+        "w": 492,
+        "h": 767
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "galletas-danesas.png": {
+      "frame": {
+        "x": 901,
+        "y": 1674,
+        "w": 543,
+        "h": 336
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 8,
+        "y": 7,
+        "w": 543,
+        "h": 336
+      },
+      "sourceSize": {
+        "w": 561,
+        "h": 356
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "estanli.png": {
+      "frame": {
+        "x": 1448,
+        "y": 1399,
+        "w": 224,
+        "h": 598
+      },
+      "rotated": true,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 224,
+        "h": 598
+      },
+      "sourceSize": {
+        "w": 224,
+        "h": 598
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "estanli2.png": {
+      "frame": {
+        "x": 1448,
+        "y": 1627,
+        "w": 224,
+        "h": 598
+      },
+      "rotated": true,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 224,
+        "h": 598
+      },
+      "sourceSize": {
+        "w": 224,
+        "h": 598
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "estanli3.png": {
+      "frame": {
+        "x": 275,
+        "y": 2,
+        "w": 224,
+        "h": 598
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 224,
+        "h": 598
+      },
+      "sourceSize": {
+        "w": 224,
+        "h": 598
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "galletas-danesas2.png": {
+      "frame": {
+        "x": 503,
+        "y": 2,
+        "w": 543,
+        "h": 336
+      },
+      "rotated": true,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 8,
+        "y": 7,
+        "w": 543,
+        "h": 336
+      },
+      "sourceSize": {
+        "w": 561,
+        "h": 356
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "galletas-danesas3.png": {
+      "frame": {
+        "x": 503,
+        "y": 549,
+        "w": 543,
+        "h": 336
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 8,
+        "y": 7,
+        "w": 543,
+        "h": 336
+      },
+      "sourceSize": {
+        "w": 561,
+        "h": 356
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    }
+  },
+  "meta": {
+    "app": "http://free-tex-packer.com",
+    "version": "0.6.7",
+    "image": "texture-1.png",
+    "format": "RGBA8888",
+    "size": {
+      "w": 2048,
+      "h": 2042
+    },
+    "scale": 1
+  }
+}
